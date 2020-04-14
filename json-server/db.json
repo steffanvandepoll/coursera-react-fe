@@ -271,6 +271,28 @@
       "message": "afadsfds",
       "date": "2017-12-04T09:41:49.890Z",
       "id": 1
+    },
+    {
+      "firstname": "Steffan",
+      "lastname": "van de Poll",
+      "telnum": "05124234235",
+      "email": "steffanvandepoll@gmail.com",
+      "agree": true,
+      "contactType": "Email",
+      "message": "no no no no no no no no no no no no there's no limit!",
+      "date": "2020-04-14T12:26:44.951Z",
+      "id": 2
+    },
+    {
+      "firstname": "Steffan",
+      "lastname": "van de Poll",
+      "telnum": "05124234235",
+      "email": "steffan.vande.poll@capgemini.com",
+      "agree": true,
+      "contactType": "Tel.",
+      "message": "NEIN",
+      "date": "2020-04-14T12:29:08.087Z",
+      "id": 3
     }
   ]
 }
