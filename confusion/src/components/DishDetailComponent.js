@@ -79,6 +79,7 @@ const CommentForm = ({ isModalOpen, toggleModal, handleSubmit }) => {
                   model=".rating"
                   name="rating"
                   className="form-control"
+                  defaultValue="5"
                 >
                   <option>1</option>
                   <option>2</option>
@@ -90,14 +91,14 @@ const CommentForm = ({ isModalOpen, toggleModal, handleSubmit }) => {
             </Row>
 
             <Row className="form-group">
-              <Label htmlFor="yourName" md={12}>
+              <Label htmlFor="author" md={12}>
                 Your name
               </Label>
               <Col md={12}>
                 <Control.text
-                  model=".yourName"
-                  id="yourName"
-                  name="yourName"
+                  model=".author"
+                  id="author"
+                  name="author"
                   placeholder="Your name"
                   className="form-control"
                   validators={{
@@ -108,7 +109,7 @@ const CommentForm = ({ isModalOpen, toggleModal, handleSubmit }) => {
                 />
                 <Errors
                   className="text-danger"
-                  model=".yourName"
+                  model=".author"
                   show="touched"
                   messages={{
                     required: "Required",
@@ -170,8 +171,8 @@ class DishDetail extends Component {
 
   handleSubmit(values) {
     console.log("Current State is: " + JSON.stringify(values));
-    alert("Current State is: " + JSON.stringify(values));
-    // event.preventDefault();
+
+    this.props.addComment(this.props.dish.id, values.rating, values.author, values.comment);
   }
 
   render() {
@@ -198,7 +199,7 @@ class DishDetail extends Component {
             <CommentForm
               isModalOpen={this.state.isModalOpen}
               toggleModal={this.toggleModal}
-              handleSubmit={this.handleSubmit}
+              handleSubmit={this.handleSubmit.bind(this)}
             />
           </div>
         </div>
